@@ -171,7 +171,6 @@ $(document).ready(function() {
 
     function checkWeather(status) {
         let action = actions.get(status) || actions.get('default');
-        console.log(actions.get(status)); // cái này ra undefined
         icon(action[0]);
         doWeather(action[1]);
     }
@@ -179,7 +178,7 @@ $(document).ready(function() {
         type: "GET",
         dataType: "json",
         data: {},
-        url: "http://api.openweathermap.org/data/2.5/weather?q=hanoi&appid=8abd04009b0b784352dd637c0ecb8668&units=metric",
+        url: "https://api.openweathermap.org/data/2.5/weather?q=hanoi&appid=8abd04009b0b784352dd637c0ecb8668&units=metric",
         success:function(data)
         {
             weather.date = moment.unix(data.dt).format("MM/DD/YYYY");
@@ -192,81 +191,12 @@ $(document).ready(function() {
             weather.feels_like = data.main.feels_like;
             weather.maxTemp = data.main.temp_max;
             weather.minTemp = data.main.temp_min;
-            // city = data.city.name;
-            // let i = 0;
-            // data.list.forEach(function(element) {
-            //     let dataToPush = {};
-            //     dataToPush.date = moment(element.dt_txt).format('DD-MM-YYYY');
-            //     dataToPush.time = moment(element.dt_txt).format('HH:MM');
-            //     dataToPush.temp = element.main.temp;
-            //     dataToPush.maxTemp = element.main.temp_max;
-            //     dataToPush.minTemp = element.main.temp_min;
-            //     dataToPush.weather = element.weather.description;
-            //     weather.push(dataToPush);
-            // })
             $(".weather .city").html(weather.city);
             $(".weather .curr-temp span").html(weather.temp);
             $(".weather .description").html(weather.weather);
             $(".weather .feel").html(weather.feels_like);
             $(".weather .max a").html(weather.maxTemp);
             $(".weather .min a").html(weather.minTemp);
-            // switch (weather.weather) {
-            //     case 'light intensity drizzle': // mưa phùn nhẹ
-            //         $(".layer-1 .rain-drop").css("display", 'block');
-            //         $(".weather .icon").html(light_rain);
-            //         $(".weather .description").css("font-size", '1.6em');
-            //         break;
-            //     case 'drizzle': // mưa phùn
-            //         $(".layer-1 .rain-drop").css("display", 'block');
-            //         $(".weather .icon").html(light_rain);
-            //         break;
-            //     case 'light rain': // mưa nhỏ
-            //         $(".layer-1 .rain-drop").css("display", 'block');
-            //         $(".weather .icon").html(light_rain);
-            //         break;
-            //     case 'moderate rain': //mưa vừa
-            //         $(".rain-drop").css("display", 'block');
-            //         $(".weather .icon").html(moderate_rain);
-            //         break;
-            //     case 'heavy intensity rain': // mưa to
-            //         $(".rain-drop").css("display", 'block');
-            //         $(".rain-drop").css("width", '2px');
-            //         $(".weather .icon").html(heavy_rain);
-            //         break;
-            //     case 'mist':
-            //         $(".fog").css("display", 'block');
-            //         $(".weather .icon").html(foggy);
-            //         break;
-            //     case 'few clouds':
-            //         $(".weather .icon").html(cloudy);
-            //         break;
-            //     case 'broken clouds':
-            //         $(".weather .icon").html(cloudy);
-            //         break;
-            //     case 'scattered clouds':
-            //         $(".weather .icon").html(cloudy);
-            //         break;
-            //     case 'overcast clouds':
-            //         $(".weather .icon").html(cloudy);
-            //         break;
-            //     case 'sky is clear':
-            //         $(".weather .icon").html(sunny);
-            //         break;
-            //     case 'light snow':
-            //         $(".snowflake").css("display", 'block');
-            //         $(".weather .icon").html(snowy);
-            //         break;
-            //     case 'snow':
-            //         $(".snowflake").css("display", 'block');
-            //         $(".weather .icon").html(snowy);
-            //         break;
-            //     case 'fog':
-            //         $(".fog").css("display", 'block');
-            //         $(".fog").css("filter", 'blur(20px)');
-            //         $(".weather .icon").html(foggy);
-            //         break;
-            // }
-
         }
     });
 });
