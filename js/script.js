@@ -171,6 +171,7 @@ $(document).ready(function() {
 
     function checkWeather(status) {
         let action = actions.get(status) || actions.get('default');
+        console.log(actions.get(status)); // cái này ra undefined
         icon(action[0]);
         doWeather(action[1]);
     }
@@ -191,12 +192,14 @@ $(document).ready(function() {
             weather.feels_like = data.main.feels_like;
             weather.maxTemp = data.main.temp_max;
             weather.minTemp = data.main.temp_min;
+
             $(".weather .city").html(weather.city);
             $(".weather .curr-temp span").html(weather.temp);
             $(".weather .description").html(weather.weather);
             $(".weather .feel").html(weather.feels_like);
             $(".weather .max a").html(weather.maxTemp);
             $(".weather .min a").html(weather.minTemp);
+
         }
     });
 });
