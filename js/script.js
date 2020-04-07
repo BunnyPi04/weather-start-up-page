@@ -68,7 +68,7 @@ var foggy = '<img src="images/foggy.png">';
 var heavy_rain = '<img src="images/heavy_rain.png">';
 var light_rain = '<img src="images/light_rain.png">';
 var light_sun = '<img src="images/light_sun.png">';
-var moderate_rain = '<img src="images/moderate.png">';
+var moderate_rain = '<img src="images/moderate_rain.png">';
 var rainy_sun = '<img src="images/rainy_sun.png">';
 var snowy = '<img src="images/snowy.png">';
 var storm = '<img src="images/storm.png">';
