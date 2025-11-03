@@ -1,8 +1,18 @@
 {
   "name": "Moon new tab",
-  "description": "Override the new tab page with an empty page, for users who don't like the original or custom new tab pages",
-  "version": "1.0",
-  "incognito": "split",
-  "chrome_url_overrides": { "newtab": "index.html" },
-  "manifest_version": 2
+  "description": "Override the new tab page with a beautiful weather-based page with dynamic backgrounds and animations",
+  "version": "2.0",
+  "manifest_version": 3,
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.openweathermap.org/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
 }
