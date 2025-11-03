@@ -2,6 +2,10 @@
 
 A beautiful Chrome extension that replaces your new tab page with a dynamic weather-based interface featuring time-dependent backgrounds and animated weather effects.
 
+## Demo
+
+You can check the demo UI here: https://bunnypi04.github.io/weather-start-up-page/
+
 ## ✨ Features
 
 - **Dynamic Backgrounds**: Changes colors and sun position based on time of day
