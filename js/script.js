@@ -34,7 +34,8 @@ $('.time').text(time);
 
 // set bg color and sun's position depend on time
 var bgColor = '#feefc7';
-if (hour > 5 && today.getHours() <= 7) {
+
+if (hour > 5 && hour <= 7) {
     bgColor = '#efa18b';
     $('.sun').css('transform', 'rotate(-150deg) translate(40vw) rotate(-150deg)');
 } else if (hour <= 10) {
@@ -51,7 +52,7 @@ if (hour > 5 && today.getHours() <= 7) {
     bgColor = '#efa18b';
     $('.weather').css('left', '10%');
     $('.sun').css('transform', 'rotate(-30deg) translate(40vw) rotate(-30deg)');
-} else if (today.getHours() >= 18 || today.getHours() <= 5) {
+} else {
     bgColor = '#010a3d';
     $('.sun').css('transform', 'rotate(-90deg) translate(40vw) rotate(-90deg)');
     $('.sun').css('background-color', '#e6dde4');
@@ -60,6 +61,7 @@ if (hour > 5 && today.getHours() <= 7) {
     $('.google a').css('color', '#e6dde4');
     $('.google path').css('fill', '#e6dde4');
 }
+
 $('.container').css('background-color', bgColor);
 
 // icon set: https://www.iconfinder.com/iconsets/weather-color-2

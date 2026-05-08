@@ -142,7 +142,7 @@ body {
     right: 10%;
     background: #ffaaa5;
     width: 300px;
-    height: 400px;
+    height: auto;
     border-radius: 10px;
 }
 .weather .icon img {
